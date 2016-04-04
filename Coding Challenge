@@ -189,7 +189,7 @@
       } else if (compAnswer == "Computer chose SCISSORS.") {
         gameResult = "WIN";
         endResult = "You won!";
-        qwikQuip = "Rock crushes scissors!";
+        qwikQuip = "Rock pulverizes scissors!";
         document.getElementById("UserScore").value = userScore + 1;
       } else if (compAnswer == "Computer chose SPOCK.") {
         gameResult = "LOSE";
