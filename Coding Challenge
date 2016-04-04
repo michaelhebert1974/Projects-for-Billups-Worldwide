@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+
+<html>
+
+  <body>
+
+    <!-- A PLUG FOR THE COMPANY I WANT TO WORK FOR -->
+    <!-- THIS CODE MODIFIED FROM... -->
+    <!-- http://static2.vipasuite.com/_resources/dyn/files/1189885zd842bffc/_fn/billups_logo.jpg -->
+    <a href="http://billups.com">
+      <img src="http://static2.vipasuite.com/_resources/dyn/files/1189885zd842bffc/_fn/billups_logo.jpg" alt="Billups Homepage" style="width:150px;height:75px;border:0;">
+    </a>
+
+    <h3> Click on the logo above to see how we transform media.</h3>
+
+
+    <!-- SHAMELESS SELF-PROMOTION -->
+    <!-- THIS CODE MODIFIED FROM... -->
+    <!--     http://billups.com -->
+    <li>
+      <a href="https://www.linkedin.com/in/mhebert1" target="_blank">who we are</a>
+    </li>
+
+    <!-- SHOW THE USER WHERE GAME WAS DERIVED -->
+    <!-- THIS CODE MODIFIED FROM... -->
+    <!--     http://billups.com -->
+    <li>
+      <a href=http://www.samkass.com/theories/RPSSL.gif target="_blank"><span>our games</span></a>
+    </li>
+
+    <!-- EMAIL THE DEVELOPER TO GIVE PRAISE OR OTHER CANDID FEEDBACK -->
+    <!-- THIS CODE MODIFIED FROM... -->
+    <!--     http://billups.com -->
+    <li>
+      <a href="mailto:michaelhebert1974@gmail.com?subject=Your Code Worked
+&body=Michael, <br><br>Thank you for your interest in Billups Worldwide.  I tried your game, and I think we should move onto the next step of hiring!  Please let me know if we can meet again sometime this week.">contact us</a>
+    </li>
+
+
+    <br>
+    <!-- ADDED HORIZONTAL LINE -->
+    <hr size="15" noshade>
+
+    <!-- ORIGINAL CODE... -->
+    <!-- <p>Click the button to display a confirm box.</p>  -->
+
+    <!-- INTRO TO GAME -->
+    <h3><font color = "blue">Welcome to the <font color = "red">ROCK <> PAPER <> SCISSORS <> SPOCK <> LIZARD </font> game!</h3>
+
+    <p><font color="black">Choose a button below to see if you can beat the computer...</font></p>
+
+    <p><font color="black">How many times can <b><u>you</b></u> pick the <b><font color = "green">correct</b></font> answer?</font>
+    </p>
+
+    <!-- INCLUDE LINK TO TAKE USER DIRECTLY TO THE RULES OF THE GAME -->
+    <p><font color="black"><a href="#rules">Rules of the game are explained at the very bottom of the page.</font></a>
+    </p>
+    <br>
+
+    <!-- ADDS BUTTONS -->
+    <button class="button button1" button onclick="choseRock()">ROCK</button>
+    <button class="button button2" button onclick="chosePaper()">PAPER</button>
+    <button class="button button3" button onclick="choseScissors()">SCISSORS</button>
+    <button class="button button4" button onclick="choseSpock()">SPOCK</button>
+    <button class="button button5" button onclick="choseLizard()">LIZARD</button>
+
+    <!-- VARIABLES USED FOR RESULTS SECTION -->
+    <p id="userChoice"></p>
+    <p style="color:red" id="compChoice"></p>
+    <p style="color:black" id="theeResult"></p>
+    <p id="quickQuip" </p>
+
+
+      <!-- ADDED HORIZONTAL LINE -->
+      <br>
+      <hr size="15" noshade>
+      <br>
+
+      <!-- SCOREBOARD SECTION -->
+      <!-- THIS CODE MODIFIED FROM... -->
+      <!-- http://stackoverflow.com/questions/15460953/how-can-i-keep-track-of-correct-answers-using-javascript -->
+      <form name="Scoreboard">
+        <table>
+          <tr>
+            <th></th>
+            <th></th>
+            <th>
+              <h1>Scoreboard</h1></th>
+            <th></th>
+            <th></th>
+          </tr>
+          <tr>
+            <th>Your Score</th>
+            <th>Computer Score</th>
+            <th>Tied Games</th>
+            <th>Total Games Played</th>
+            <th>Your Win %</th>
+          </tr>
+          <tr style="text-align:center">
+            <td>
+              <input type="text" name="UserScore" id="UserScore" value="0">
+            </td>
+            <td>
+              <input type="text" name="CompScore" id="CompScore" value="0">
+            </td>
+            <td>
+              <input type="text" name="TiedGames" id="TiedGames" value="0">
+            </td>
+            <td>
+              <input type="text" name="TotalGame" id="TotalGame" value="0">
+            </td>
+            <td>
+              <input type="text" name="WinPercent" id="WinPercent" value="0">
+            </td>
+          </tr>
+          <tr></tr>
+          <tr></tr>
+          <tr></tr>
+          <tr></tr>
+          <tr></tr>
+          <tr></tr>
+          <tbody style="text-align:center">
+              <td></td>
+              <td></td>
+              <td>
+                <input type="button" value="Reset All Scores" onclick="resetScore();">
+              </td>
+              <td></td>
+              <td></td>
+            </tr>
+        </table>
+      </form>
+
+  </body>
+
+  <!-- ADDED HORIZONTAL LINE -->
+  <br>
+  <hr size="15" noshade>
+  <br>
+
+  <!-- RULES AT THE BOTTOM OF THE PAGE  -->
+  <h1 id="rules">Rules of the Game</h1>
+  <!-- THIS IMAGE LINK WAS PROVIDED TO COMPLETE CODE CHALLENGE -->
+  <img src="http://www.samkass.com/theories/RPSSL.gif" alt="Game Picture" style="width:400px;height:400px;border:0;">
+
+
+  <!-- JAVASCRIPT FUNCTIONS FOR THE GAME -->
+  <script>
+    /* JAVASCRIPT VARIABLES FOR FUNCTIONS BELOW */
+    var myGame = ['ROCK', 'PAPER', 'SCISSORS', 'SPOCK', 'LIZARD'];
+    var userAnswer;
+    var compAnswer;
+    var endResult;
+    var qwikQuip;
+
+    /* USER CHOSE THE ROCK BUTTON */
+    function choseRock() {
+
+      /* MY FIRST VERSION WAS HARD CODED  ... */
+      /* userAnswer = "You chose ROCK!"; */
+      /* MY SECOND VERSION WAS CLOSER ... */
+      /* HOWEVER, SEEKING SOMETHING SPECIFIC BUT MORE DYNAMIC ... AND LESS HARD-CODED
+         THE CODE BELOW WORKS IF 'startSlice' and 'finalSlice' ARE ASSIGNED VALUES */
+      /*        userAnswer = "You chose " + myGame.slice(startSlice, finalSlice) + "!"; */
+      /* FOR NOW ... FINAL VERSION BELOW SELECTING INDEX NUMBER OF ARRAY */
+      userAnswer = "You chose " + myGame[0] + "!";
+
+      /*  RANDOM COMPUTER CHOICE */
+      compAnswer = "Computer chose " + myGame[Math.floor(Math.random() * myGame.length)] + ".";
+
+      /* READS EXISTING VALUES FROM SCOREBOARD */
+      userScore = Number(document.getElementById("UserScore").value)
+      compScore = Number(document.getElementById("CompScore").value)
+      tiedGames = Number(document.getElementById("TiedGames").value)
+      totalGame = Number(document.getElementById("TotalGame").value)
+
+      /*     COMPARES USER CHOICE TO RANDOM COMPUTER CHOICE */
+      /*     STORES RESULTS IN VARIABLES */
+      if (compAnswer == "Computer chose ROCK.") {
+        gameResult = "TIE";
+        endResult = "It was a tie!";
+        qwikQuip = "Rock = Rock!";
+        document.getElementById("TiedGames").value = tiedGames + 1;
+      } else if (compAnswer == "Computer chose PAPER.") {
+        gameResult = "LOSE";
+        endResult = "You lost.";
+        qwikQuip = "Rock is covered by Paper.";
+        document.getElementById("CompScore").value = compScore + 1;
+      } else if (compAnswer == "Computer chose SCISSORS.") {
+        gameResult = "WIN";
+        endResult = "You won!";
+        qwikQuip = "Rock crushes scissors!";
+        document.getElementById("UserScore").value = userScore + 1;
+      } else if (compAnswer == "Computer chose SPOCK.") {
+        gameResult = "LOSE";
+        endResult = "You lost.";
+        qwikQuip = "Rock is vaporized by Spock."
+        document.getElementById("CompScore").value = compScore + 1;
+      } else {
+        gameResult = "WIN";
+        endResult = "You won!";
+        qwikQuip = "Rock crushes Lizard!";
+        document.getElementById("UserScore").value = userScore + 1;
+      }
+
+      /*      LETS USER KNOW IF THEY ARE UNDEFEATED */
+      if (Number(document.getElementById("CompScore").value) == 0) {
+        endResult = endResult + "    You remain UNDEFEATED!";
+      }
+
+      /*  DISPLAYS RESULTS (STORED IN THE VARIABLES) */
+      document.getElementById("userChoice").innerHTML = userAnswer;
+      document.getElementById("compChoice").innerHTML = compAnswer;
+      document.getElementById("theeResult").innerHTML = endResult;
+      document.getElementById("quickQuip").innerHTML = qwikQuip;
+      document.getElementById("TotalGame").value = totalGame + 1;
+      document.getElementById("WinPercent").value = Number(((Number(document.getElementById("UserScore").value)) / (Number(document.getElementById("TotalGame").value))) * 100).toFixed(0) + "%";
+
+    }
+
+
+
+
+
+    /* USER CHOSE THE PAPER BUTTON */
+    function chosePaper() {
+
+      /* FOR NOW ... FINAL VERSION BELOW SELECTING INDEX NUMBER OF ARRAY */
+      userAnswer = "You chose " + myGame[1] + "!";
+
+      /*  RANDOM COMPUTER CHOICE */
+      compAnswer = "Computer chose " + myGame[Math.floor(Math.random() * myGame.length)] + ".";
+
+      /* READS EXISTING VALUES FROM SCOREBOARD */
+      userScore = Number(document.getElementById("UserScore").value)
+      compScore = Number(document.getElementById("CompScore").value)
+      tiedGames = Number(document.getElementById("TiedGames").value)
+      totalGame = Number(document.getElementById("TotalGame").value)
+
+      /*     COMPARES USER CHOICE TO RANDOM COMPUTER CHOICE */
+      /*     STORES RESULTS IN VARIABLES */
+      if (compAnswer == "Computer chose ROCK.") {
+        gameResult = "WIN";
+        endResult = "You won!";
+        qwikQuip = "Paper covers Rock.";
+        document.getElementById("UserScore").value = userScore + 1;
+      } else if (compAnswer == "Computer chose PAPER.") {
+        gameResult = "TIE";
+        endResult = "It was a tie!";
+        qwikQuip = "PAPER = PAPER!";
+        document.getElementById("TiedGames").value = tiedGames + 1;
+      } else if (compAnswer == "Computer chose SCISSORS.") {
+        gameResult = "LOSE";
+        endResult = "You lost.";
+        qwikQuip = "Paper is cut by Scissors.";
+        document.getElementById("CompScore").value = compScore + 1;
+      } else if (compAnswer == "Computer chose SPOCK.") {
+        gameResult = "WIN";
+        endResult = "You won!";
+        qwikQuip = "Paper disproves Spock!";
+        document.getElementById("UserScore").value = userScore + 1;
+      } else {
+        gameResult = "LOSE";
+        endResult = "You lost.";
+        qwikQuip = "Paper is eaten by Lizard!";
+        document.getElementById("CompScore").value = compScore + 1;
+      }
+
+      /*      LETS USER KNOW IF THEY ARE UNDEFEATED */
+      if (Number(document.getElementById("CompScore").value) == 0) {
+        endResult = endResult + "    You remain UNDEFEATED!";
+      }
+
+      /*  DISPLAYS RESULTS (STORED IN THE VARIABLES) */
+      document.getElementById("userChoice").innerHTML = userAnswer;
+      document.getElementById("compChoice").innerHTML = compAnswer;
+      document.getElementById("theeResult").innerHTML = endResult;
+      document.getElementById("quickQuip").innerHTML = qwikQuip;
+      document.getElementById("TotalGame").value = totalGame + 1;
+      document.getElementById("WinPercent").value = Number(((Number(document.getElementById("UserScore").value)) / (Number(document.getElementById("TotalGame").value))) * 100).toFixed(0) + "%";
+
+    }
+
+
+
+
+
+    /* USER CHOSE THE SCISSORS BUTTON */
+    function choseScissors() {
+
+      /* FOR NOW ... FINAL VERSION BELOW SELECTING INDEX NUMBER OF ARRAY */
+      userAnswer = "You chose " + myGame[2] + "!";
+
+      /*  RANDOM COMPUTER CHOICE */
+      compAnswer = "Computer chose " + myGame[Math.floor(Math.random() * myGame.length)] + ".";
+
+      /* READS EXISTING VALUES FROM SCOREBOARD */
+      userScore = Number(document.getElementById("UserScore").value)
+      compScore = Number(document.getElementById("CompScore").value)
+      tiedGames = Number(document.getElementById("TiedGames").value)
+      totalGame = Number(document.getElementById("TotalGame").value)
+
+      /*     COMPARES USER CHOICE TO RANDOM COMPUTER CHOICE */
+      /*     STORES RESULTS IN VARIABLES */
+      if (compAnswer == "Computer chose ROCK.") {
+        gameResult = "LOSE";
+        endResult = "You lost.";
+        qwikQuip = "Scissors is crushed by Rock.";
+        document.getElementById("CompScore").value = compScore + 1;
+      } else if (compAnswer == "Computer chose PAPER.") {
+        gameResult = "WIN";
+        endResult = "You won!";
+        qwikQuip = "Scissors cuts Paper.";
+        document.getElementById("UserScore").value = userScore + 1;
+      } else if (compAnswer == "Computer chose SCISSORS.") {
+        gameResult = "TIE";
+        endResult = "It was a tie!";
+        qwikQuip = "SCISSORS = SCISSORS!";
+        document.getElementById("TiedGames").value = tiedGames + 1;
+      } else if (compAnswer == "Computer chose SPOCK.") {
+        gameResult = "LOSE";
+        endResult = "You lost.";
+        qwikQuip = "Scissors is smashed by Spock!";
+        document.getElementById("CompScore").value = compScore + 1;
+      } else {
+        gameResult = "WIN";
+        endResult = "You won!";
+        qwikQuip = "Scissors decapitates Lizard!";
+        document.getElementById("UserScore").value = userScore + 1;
+      }
+
+      /*      LETS USER KNOW IF THEY ARE UNDEFEATED */
+      if (Number(document.getElementById("CompScore").value) == 0) {
+        endResult = endResult + "    You remain UNDEFEATED!";
+      }
+
+      /*  DISPLAYS RESULTS (STORED IN THE VARIABLES) */
+      document.getElementById("userChoice").innerHTML = userAnswer;
+      document.getElementById("compChoice").innerHTML = compAnswer;
+      document.getElementById("theeResult").innerHTML = endResult;
+      document.getElementById("quickQuip").innerHTML = qwikQuip;
+      document.getElementById("TotalGame").value = totalGame + 1;
+      document.getElementById("WinPercent").value = Number(((Number(document.getElementById("UserScore").value)) / (Number(document.getElementById("TotalGame").value))) * 100).toFixed(0) + "%";
+
+    }
+
+
+
+
+
+
+    /* USER CHOSE THE SPOCK BUTTON */
+    function choseSpock() {
+
+      /* FOR NOW ... FINAL VERSION BELOW SELECTING INDEX NUMBER OF ARRAY */
+      userAnswer = "You chose " + myGame[3] + "!";
+
+      /*  RANDOM COMPUTER CHOICE */
+      compAnswer = "Computer chose " + myGame[Math.floor(Math.random() * myGame.length)] + ".";
+
+      /* READS EXISTING VALUES FROM SCOREBOARD */
+      userScore = Number(document.getElementById("UserScore").value)
+      compScore = Number(document.getElementById("CompScore").value)
+      tiedGames = Number(document.getElementById("TiedGames").value)
+      totalGame = Number(document.getElementById("TotalGame").value)
+
+      /*     COMPARES USER CHOICE TO RANDOM COMPUTER CHOICE */
+      /*     STORES RESULTS IN VARIABLES */
+      if (compAnswer == "Computer chose ROCK.") {
+        gameResult = "WIN";
+        endResult = "You won!";
+        qwikQuip = "Spock vaporizes Rock.";
+        document.getElementById("UserScore").value = userScore + 1;
+      } else if (compAnswer == "Computer chose PAPER.") {
+        gameResult = "LOSE";
+        endResult = "You lost.";
+        qwikQuip = "Spock is disproved by Paper.";
+        document.getElementById("CompScore").value = compScore + 1;
+      } else if (compAnswer == "Computer chose SCISSORS.") {
+        gameResult = "WIN";
+        endResult = "You won!";
+        qwikQuip = "Spock smashes Scissors!";
+        document.getElementById("UserScore").value = userScore + 1;
+      } else if (compAnswer == "Computer chose SPOCK.") {
+        gameResult = "TIE";
+        endResult = "It was a tie!";
+        qwikQuip = "SPOCK = SPOCK!";
+        document.getElementById("TiedGames").value = tiedGames + 1;
+      } else {
+        gameResult = "LOSE";
+        endResult = "You lost.";
+        qwikQuip = "Spock is poisoned by Lizard!";
+        document.getElementById("CompScore").value = compScore + 1;
+      }
+
+      /*      LETS USER KNOW IF THEY ARE UNDEFEATED */
+      if (Number(document.getElementById("CompScore").value) == 0) {
+        endResult = endResult + "    You remain UNDEFEATED!";
+      }
+
+      /*  DISPLAYS RESULTS (STORED IN THE VARIABLES) */
+      document.getElementById("userChoice").innerHTML = userAnswer;
+      document.getElementById("compChoice").innerHTML = compAnswer;
+      document.getElementById("theeResult").innerHTML = endResult;
+      document.getElementById("quickQuip").innerHTML = qwikQuip;
+      document.getElementById("TotalGame").value = totalGame + 1;
+      document.getElementById("WinPercent").value = Number(((Number(document.getElementById("UserScore").value)) / (Number(document.getElementById("TotalGame").value))) * 100).toFixed(0) + "%";
+
+    }
+
+
+
+
+
+
+    /* USER CHOSE THE LIZARD BUTTON */
+    function choseLizard() {
+
+      /* FOR NOW ... FINAL VERSION BELOW SELECTING INDEX NUMBER OF ARRAY */
+      userAnswer = "You chose " + myGame[4] + "!";
+
+      /*  RANDOM COMPUTER CHOICE */
+      compAnswer = "Computer chose " + myGame[Math.floor(Math.random() * myGame.length)] + ".";
+
+      /* READS EXISTING VALUES FROM SCOREBOARD */
+      userScore = Number(document.getElementById("UserScore").value)
+      compScore = Number(document.getElementById("CompScore").value)
+      tiedGames = Number(document.getElementById("TiedGames").value)
+      totalGame = Number(document.getElementById("TotalGame").value)
+
+      /*     COMPARES USER CHOICE TO RANDOM COMPUTER CHOICE */
+      /*     STORES RESULTS IN VARIABLES */
+      if (compAnswer == "Computer chose ROCK.") {
+        gameResult = "LOSE";
+        endResult = "You lost.";
+        qwikQuip = "Lizard is crushed by Rock.";
+        document.getElementById("CompScore").value = compScore + 1;
+      } else if (compAnswer == "Computer chose PAPER.") {
+        gameResult = "WIN";
+        endResult = "You won!";
+        qwikQuip = "Lizard eats Paper.";
+        document.getElementById("UserScore").value = userScore + 1;
+      } else if (compAnswer == "Computer chose SCISSORS.") {
+        gameResult = "LOSE";
+        endResult = "You lost.";
+        qwikQuip = "Lizard is decapitated by Scissors!";
+        document.getElementById("CompScore").value = compScore + 1;
+      } else if (compAnswer == "Computer chose SPOCK.") {
+        gameResult = "WIN";
+        endResult = "You won!";
+        qwikQuip = "Lizard poisons Spock.";
+        document.getElementById("UserScore").value = userScore + 1;
+      } else {
+        gameResult = "TIE";
+        endResult = "It was a tie!";
+        qwikQuip = "LIZARD = LIZARD!";
+        document.getElementById("TiedGames").value = tiedGames + 1;
+      }
+
+      /*      LETS USER KNOW IF THEY ARE UNDEFEATED */
+      if (Number(document.getElementById("CompScore").value) == 0) {
+        endResult = endResult + "    You remain UNDEFEATED!";
+      }
+
+      /*  DISPLAYS RESULTS (STORED IN THE VARIABLES) */
+      document.getElementById("userChoice").innerHTML = userAnswer;
+      document.getElementById("compChoice").innerHTML = compAnswer;
+      document.getElementById("theeResult").innerHTML = endResult;
+      document.getElementById("quickQuip").innerHTML = qwikQuip;
+      document.getElementById("TotalGame").value = totalGame + 1;
+      document.getElementById("WinPercent").value = Number(((Number(document.getElementById("UserScore").value)) / (Number(document.getElementById("TotalGame").value))) * 100).toFixed(0) + "%";
+
+    }
+
+  </script>
+
+
+
+
+
+  <!-- ADDS COLORS AND SPECIAL EFFECTS TO THE GAME BUTTONS -->
+  <!-- THIS CODE TAKEN FROM...
+       http://www.w3schools.com/css/css3_buttons.asp -->
+  <style>
+    .button {
+      background-color: #555555;
+      /* Black */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    /* BUTTON HOVER AFFECT */
+    /* THIS CODE TAKEN FROM...
+       http://www.w3schools.com/css/css3_buttons.asp */
+    
+    .button:hover {
+      background-color: #3e8e41;
+      color: white;
+    }
+    /* BUTTON APPEARS PRESSED DOWN AFFECT */
+    /* THIS CODE TAKEN FROM...
+       http://www.w3schools.com/css/css3_buttons.asp */
+    
+    .button:active {
+      background-color: #3e8e41;
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+    }
+    /* ASSIGNS COLORS TO BUTTONS */
+    /* THIS CODE MODIFIED FROM...
+       http://www.w3schools.com/css/css3_buttons.asp */
+    
+    .button1 {
+      background-color: #555555;
+      color: white;
+    }
+    /* Black */
+    /* DEVELOPER CONSIDERED USING DARK BROWN FOR THE 'PAPER' BUTTON */
+    /* .button2 {background-color: #654321; color: white;}*/
+    /* Dark Brown */
+    
+    .button2 {
+      background-color: #a58855;
+      color: white;
+    }
+    /* Cardboard Brown */
+    
+    .button3 {
+      background-color: #e7e7e7;
+      color: black;
+    }
+    /* Gray */
+    
+    .button4 {
+      background-color: #ADD8E6;
+      color: black;
+    }
+    /* Light Blue */
+    
+    .button5 {
+      background-color: #ffd700;
+      color: black;
+    }
+    /* Yellow */
+
+  </style>
+
+
+
+  <!-- RESETS ALL RESULTS AND ALL SCORES TOO -->
+  <script>
+    function resetScore() {
+
+      /*  CLEARS ALL PREVIOUS TEXT STATEMENTS */
+      userAnswer = null;
+      compAnswer = null;
+      endResult = null;
+      qwikQuip = null;
+      document.getElementById("userChoice").innerHTML = userAnswer;
+      document.getElementById("compChoice").innerHTML = compAnswer;
+      document.getElementById("theeResult").innerHTML = endResult;
+      document.getElementById("quickQuip").innerHTML = qwikQuip;
+
+      /*  RESETS ALL SCOREBOARD VALUES BACK TO DEFAULT VALUES */
+      document.getElementById("UserScore").value = document.getElementById("UserScore").defaultValue;
+      document.getElementById("CompScore").value = document.getElementById("CompScore").defaultValue;
+      document.getElementById("TiedGames").value = document.getElementById("TiedGames").defaultValue;
+      document.getElementById("TotalGame").value = document.getElementById("TotalGame").defaultValue;
+      document.getElementById("WinPercent").value = document.getElementById("WinPercent").defaultValue;
+    }
+
+  </script>
+
+</html>
