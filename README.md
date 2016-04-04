@@ -26,7 +26,8 @@ Game Instructions:<br />
         (3) You tied
  
 (5) There is also a scoreboard that keeps running totals based on the results.<br />
-        The scoreboard displays the following info:
+
+        The scoreboard displays the following info:<br />
         (1) The number of games you won
         (2) The number of games the computer won
         (3) The number of games both of you tied
