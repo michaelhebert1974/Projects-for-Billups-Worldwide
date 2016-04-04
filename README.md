@@ -5,20 +5,29 @@ This project was created as part of a Coding Challenge for Billups Worldwide.<br
 Instructions for using the code provided in the Coding Challenge Project:<br />
 (1) Make a 'pull' request from the repository:  michaelhebert1974/Projects-for-Billups-Worldwide<br />
     ... also can be found on the web at ...<br />
-    https://github.com/michaelhebert1974/Projects-for-Billups-Worldwide<br />
+    https://github.com/michaelhebert1974/Projects-for-Billups-Worldwide<br /><br />
+    
 (2) Copy and paste (or load) that code into either a web-editor or web-publishing application and run or launch it.<br />
 
 
 Game Instructions:<br />
 (1) Click on any of the 5 colored buttons (beneath the Header section of the webpage) that are labeled:<br />
-    (a) "ROCK" | "PAPER" | "SCISSORS" | "SPOCK" | "LIZARD"<br />
-(2) The button you select corresponds to the choice you would like to submit against the computer.
-(3) After you press 1 of the colored buttons, the computer will then randomly select a choice from the same 5 options you have.
-(4) The results will be displayed for you in TEXT statements that let you know the outcome of each game.  
-    (a) There are 3 possible results: 
-        (1) You won 
-        (2) You lost
-        (3) You tied 
+    (a) "ROCK" | "PAPER" | "SCISSORS" | "SPOCK" | "LIZARD"<br /><br />
+
+(2) The button you select corresponds to the choice you would like to submit against the computer.<br />
+
+(3) After you press 1 of the colored buttons, the computer will then randomly select a choice from the same 5 options you have.<br />
+
+(4) The results will be displayed for you in TEXT statements that let you know the outcome of each game.<br />
+  
+    (a) There are 3 possible results: <br />
+
+        (1) You won<br />
+ 
+        (2) You lost<br />
+
+        (3) You tied<br />
+ 
 (5) There is also a scoreboard that keeps running totals based on the results.
     (a) The scoreboard displays the following info:
         (1) The number of games you won
