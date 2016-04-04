@@ -12,7 +12,7 @@ Instructions for using the code provided in the Coding Challenge Project:<br />
 
 Game Instructions:<br />
 (1) Click on any of the 5 colored buttons (beneath the Header section of the webpage) that are labeled:<br />
-    (a) "ROCK" | "PAPER" | "SCISSORS" | "SPOCK" | "LIZARD"<br />
+        "ROCK" | "PAPER" | "SCISSORS" | "SPOCK" | "LIZARD"<br />
 
 (2) The button you select corresponds to the choice you would like to submit against the computer.<br />
 
@@ -20,7 +20,7 @@ Game Instructions:<br />
 
 (4) The results will be displayed for you in TEXT statements that let you know the outcome of each game.<br />
   
-    (a) There are 3 possible results: <br />
+        There are 3 possible results: <br />
 
         (1) You won<br />
  
@@ -30,17 +30,21 @@ Game Instructions:<br />
  
 (5) There is also a scoreboard that keeps running totals based on the results.<br />
 
-    (a) The scoreboard displays the following info:<br />
+        The scoreboard displays the following info:<br />
 
+        (1) The number of games you won<br />
+        
         (2) The number of games the computer won<br />
 
         (3) The number of games both of you tied<br />
 
         (4) The total number of games played<br />
 
-        (5) Your total winning percentage (which is the total number of games you have won divided by the total number of games you played).<br />
+        (5) Your total winning percentage<br /> 
+        Calculated as the total number of games you won divided by the total number of games you played.<br />
   
-        PLEASE NOTE:  Ties do NOT count towards your "Win %" - however - they do count towards you being UNDEFEATED against the computer.<br />
+        PLEASE NOTE:  Ties do NOT count towards your "Win %"<br />
+                      However - Ties do count towards you being UNDEFEATED against the computer.<br />
 
 (6) You can reset all of your scores by pressing the "Reset All Scores" button in the Scoreboard section.<br />
 
