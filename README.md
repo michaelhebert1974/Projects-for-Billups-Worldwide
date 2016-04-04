@@ -20,31 +20,22 @@ Game Instructions:<br />
 
 (4) The results will be displayed for you in TEXT statements that let you know the outcome of each game.<br />
   
-        There are 3 possible results: <br />
-
-        (1) You won<br />
+        There are 3 possible results:
+        (1) You won
+        (2) You lost
+        (3) You tied
  
-        (2) You lost<br />
-
-        (3) You tied<br />
- 
-(5) There is also a scoreboard that keeps running totals based on the results.<br />
-
-        The scoreboard displays the following info:<br />
-
-        (1) The number of games you won<br />
-        
-        (2) The number of games the computer won<br />
-
-        (3) The number of games both of you tied<br />
-
-        (4) The total number of games played<br />
-
-        (5) Your total winning percentage<br /> 
-        Calculated as the total number of games you won divided by the total number of games you played.<br />
+(5) There is also a scoreboard that keeps running totals based on the results.
+        The scoreboard displays the following info:
+        (1) The number of games you won
+        (2) The number of games the computer won
+        (3) The number of games both of you tied
+        (4) The total number of games played
+        (5) Your total winning percentage 
+        Calculated as the total number of games you won divided by the total number of games you played.
   
-        PLEASE NOTE:  Ties do NOT count towards your "Win %"<br />
-                      However - Ties do count towards you being UNDEFEATED against the computer.<br />
+        PLEASE NOTE:  Ties do NOT count towards your "Win %"
+                      However - Ties do count towards you being UNDEFEATED against the computer.
 
 (6) You can reset all of your scores by pressing the "Reset All Scores" button in the Scoreboard section.<br />
 
