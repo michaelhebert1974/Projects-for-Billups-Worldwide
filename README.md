@@ -7,7 +7,7 @@ Instructions for using the code provided in the Coding Challenge Project:<br />
     ... also can be found on the web at ...<br />
     https://github.com/michaelhebert1974/Projects-for-Billups-Worldwide<br />
     
-(2) Copy and paste (or load) that code into either a web-editor or web-publishing application and run or launch it.<br />
+(2) Copy and paste (or load) that code into either a web-editor or web-publishing application and run or launch it.<br /><br />
 
 
 Game Instructions:<br />
@@ -16,7 +16,7 @@ Game Instructions:<br />
 
 (2) The button you select corresponds to the choice you would like to submit against the computer.<br />
 
-(3) After you press 1 of the colored buttons, the computer will then randomly select a choice from the same 5 options you have.<br />
+(3) After you press 1 of the colored buttons, the computer will randomly select a choice from the same 5 options you have.<br />
 
 (4) The results will be displayed for you in TEXT statements that let you know the outcome of each game.<br />
   
